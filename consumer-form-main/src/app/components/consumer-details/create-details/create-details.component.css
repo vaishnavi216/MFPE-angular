@@ -1,0 +1,15 @@
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}
+.alert-danger {
+    color: red;
+    font-size: small;
+}
+
+.mat-card
+{
+    background-color:whitesmoke;
+}

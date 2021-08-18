@@ -1,0 +1,47 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<app-sidenav></app-sidenav>
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <mat-card> 
+                <form [formGroup]="issuePolicyForm" (ngSubmit)="iPolicy(issuePolicyForm.value)">  
+                        <h1 class="text-center"> Issue Policy</h1>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Consumer_Policy_ID</mat-label>
+                        <input type="text" name="id" formControlName="id" required placeholder="Enter Id" matInput/>
+                    </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Consumer_ID</mat-label>
+                        <input type="text" name="consumerid" formControlName="consumerid" required placeholder="Enter Consumer Id" matInput/>
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Business_ID</mat-label>
+                    <input type="text" name="businessid" formControlName="businessid" required placeholder="Enter Business Id" matInput/>
+                </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>PaymentDetails</mat-label>
+                        <input type="type" name='paymentdetails' formControlName='paymentdetails' required placeholder="Enter PaymentDetails" matInput/>
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Acceptancestatus</mat-label>
+                        <input type="type" name='acceptancestatus' formControlName='acceptancestatus' required placeholder="Enter Acceptancestatus" matInput/>
+                    </mat-form-field>
+             <div class="container text-center">
+            <button [disabled]='issuePolicyForm.invalid' style="margin-right: 10px" mat-raised-button color="primary" type="submit">Issue Policy</button>
+        </div>
+    </form>
+</mat-card>
+</div>
+</div>
+</div>
+</div>
+<span></span>
+<!-- <div *ngIf='message' class="success">
+   <h1>{{message}}</h1>
+</div>
+
+<div *ngIf='errorMessage' class="error">
+        {{errorMessage}}
+    </div> -->
+

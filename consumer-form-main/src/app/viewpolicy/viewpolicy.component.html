@@ -1,0 +1,92 @@
+<app-sidenav></app-sidenav>
+    <div class="bootstrap-wrapper">
+        <div class="container mt">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+        <mat-card> 
+            <div class="container text-center">
+        <form [formGroup]="policyViewForm" (ngSubmit)="viewPolicy(policyViewForm.value)">         
+            <h1 class="text-center">View Policy</h1>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Consumer_ID</mat-label>
+            <input type="text" name="consid" formControlName="consid" required placeholder="Enter ConsumerId" matInput/>
+       </mat-form-field>
+       <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Policy_Id</mat-label>
+            <input type="text" name='id' formControlName='id' required placeholder="Enter Consumer PolicyId" matInput/>
+     </mat-form-field>
+            <div class="container text-center">
+                <button [disabled]='policyViewForm.invalid' mat-raised-button color="primary" type="submit">View Policy</button>
+            </div>
+        </form>
+    </div>
+        </mat-card>
+</div>
+</div>
+</div>
+</div>
+
+<div  *ngIf="message" class="success">
+<h3 class="text-center">Policy Details</h3>
+<div class="row" class="col-9">
+<table class="table table-striped">
+    <thead>
+        <tr>
+    <td>ConsumerId</td>
+    <td>PolicyId</td>
+    <td>Property_Type</td>
+    <td>Consumer_Type</td>
+    <td>Assured_Sum</td>
+    <td>Tenure</td>
+    <td>Business_Value</td>
+    <td>Property_Value</td>
+    <td>Base_Location</td>
+        </tr>
+     </thead>
+     <tbody>
+        <tr>
+            <td>{{consumerformdata.consumerid}}</td>
+            <td>{{consumerformdata.policyid}}</td>
+            <td>{{consumerformdata.property_type}}</td>
+            <td>{{consumerformdata.consumer_type}}</td>
+            <td>{{consumerformdata.assured_sum}}</td>
+            <td>{{consumerformdata.tenure}}</td>
+            <td>{{consumerformdata.business_value}}</td>
+            <td>{{consumerformdata.property_value}}</td>
+            <td>{{consumerformdata.base_location}}</td>
+        </tr>
+    </tbody>
+</table>  
+</div>
+
+<div class="row" class="col-9">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Type</td>
+            <td>BusinessId</td>
+            <td>PaymentDetails</td>
+            <td>AcceptanceStatus</td>
+            <td>PolicyStatus</td>
+            <td>EffectiveDate</td>
+            <td>Covered_Sum</td>
+            <td>Duration</td>  
+            <td>AcceptedQuote</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{consumerformdata.type}}</td>
+       <td>{{consumerformdata.businessid}}</td>
+            <td>{{consumerformdata.paymentdetails}}</td>
+            <td>{{consumerformdata.acceptancestatus}}</td>
+            <td>{{consumerformdata.policystatus}}</td>
+            <td>{{consumerformdata.effectivedate}}</td>
+            <td>{{consumerformdata.covered_sum}}</td>
+            <td>{{consumerformdata.duration}}</td>
+            <td>{{consumerformdata.acceptedquote}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>

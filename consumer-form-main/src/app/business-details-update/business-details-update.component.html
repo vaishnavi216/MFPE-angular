@@ -1,0 +1,133 @@
+<app-sidenav></app-sidenav>
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <h1 class="text-center">Update Business Details</h1>
+                <mat-card> 
+    <form [formGroup]="propertyForm" (ngSubmit)="doAction(propertyForm.value)">
+    
+        <div class="form-group">
+            <input type="number" class="form-control" name="propertyId" formControlName="propertyId" required placeholder="Enter property id">
+           <span *ngIf="propertyForm.controls['propertyId'].invalid && propertyForm.controls['propertyId'].touched" class="alert-danger"> propertyId is required.
+               </span>
+       </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control" name="businessId" formControlName="businessId" required placeholder="Enter BusinessId">
+                    
+                    <span *ngIf="propertyForm.controls['businessId'].invalid && propertyForm.controls['businessId'].touched" class="alert-danger"> 
+                        Business id must contains 3 digits. Eg:501</span>
+                </div>
+            
+            
+                <div class="form-group">
+                     <input type="number" class="form-control" name="consumerId" formControlName="consumerId" required placeholder="Enter consumerId">
+                    <span *ngIf="propertyForm.controls['consumerId'].invalid && propertyForm.controls['consumerId'].touched" class="alert-danger"> 
+                        consumerId must contains 4 digits. Eg:1001 </span>
+                </div>
+        
+           
+                <div class="form-group">
+                   
+            <select name="insurancetype" class="form-control"  placeholder="select insurancetype" id="insurancetype" formControlName="insurancetype">
+                <option value="" disabled>Select InsuranceType</option>
+                <option value="Pay Back">Pay Back</option>
+                <option value="Fire">Fire</option>
+                <option value="Replacement">Replacement</option>
+                <option value="Burglary">Burglary</option>
+                <option value="All Risks">All Risks</option>
+                <option value="Natural Disaster">Natural Disaster</option>
+            </select>
+            <span *ngIf="propertyForm.controls['insurancetype'].invalid && propertyForm.controls['insurancetype'].touched" class="alert-danger">
+                select insurancetype.
+            </span>
+        </div>
+
+        
+                <div class="form-group">
+                   
+            <select name="propertytype" class="form-control"  placeholder="select propertytype" id="propertytype" formControlName="propertytype">
+                <option value="" disabled>Select PropertyType</option>
+                <option value="Building">Building</option>
+                <option value="Factory Equipment">Factory Equipment</option>
+                <option value="Property in Transit">Property in Transit</option>
+            </select>
+            <span *ngIf="propertyForm.controls['propertytype'].invalid && propertyForm.controls['propertytype'].touched" class="alert-danger">
+                select your propertytype.
+            </span>
+            </div>
+         
+            <!--row 3-->
+           
+                <div class="form-group">
+                      <input type="text" class="form-control" name="buildingsqft" formControlName="buildingsqft" required placeholder="Enter buildingsqft">
+                    <span *ngIf="propertyForm.controls['buildingsqft'].invalid && propertyForm.controls['buildingsqft'].touched" class="alert-danger"> buildingsqft is required.
+                        </span>
+                </div>
+         
+          
+                <div class="form-group">
+                    
+            <select name="buildingtype" class="form-control"  placeholder="select buildingtype" id="buildingtype" formControlName="buildingtype">
+                <option value="" disabled>Select BuildingType</option>
+                <option value="Owner">Owner</option>
+                <option value="Rented">Rented</option>
+            </select>
+            <span *ngIf="propertyForm.controls['buildingtype'].invalid && propertyForm.controls['buildingtype'].touched" class="alert-danger">
+                select your buildingtype.
+            </span>
+            </div>
+            <!--row 4-->
+        
+                <div class="form-group">
+                    <input type="text" class="form-control" name="buildingstoreys" formControlName="buildingstoreys" required placeholder="Enter buildingstoreys">
+                    <span *ngIf="propertyForm.controls['buildingstoreys'].invalid && propertyForm.controls['buildingstoreys'].touched" class="alert-danger">  
+                        Building storeys should not exceed 10 letters</span>
+                    </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control"  name='buildingage' formControlName='buildingage' required placeholder="Enter buildingage">
+                    <span *ngIf="propertyForm.controls['buildingage'].invalid && propertyForm.controls['buildingage'].touched" class="alert-danger"> enter buildingage
+                        building age must be years </span>
+                </div>
+
+            <!--row 5-->
+          
+                <div class="form-group">
+                    <input type="number" name='costoftheasset' class="form-control"  formControlName='costoftheasset' required placeholder="Enter costoftheasset">
+                    <span *ngIf="propertyForm.controls['costoftheasset'].invalid && propertyForm.controls['costoftheasset'].touched" class="alert-danger"> 
+                        costoftheasset in lakhs </span>
+                </div>
+
+          
+                <div class="form-group">
+                    <input type="number" name='salvagevalue' class="form-control"  formControlName='salvagevalue' required placeholder="Enter salvagevalue">
+                    <span *ngIf="propertyForm.controls['salvagevalue'].invalid && propertyForm.controls['salvagevalue'].touched" class="alert-danger"> 
+                        salvagevalue is required</span>
+                </div>
+
+            <!--row 6-->
+           
+                <div class="form-group">
+                    <input type="number" class="form-control"  name='usefullifeoftheAsset' placeholder="Enter usefullifeoftheAsset" formControlName='usefullifeoftheAsset' required >
+                    <span *ngIf="propertyForm.controls['usefullifeoftheAsset'].invalid && propertyForm.controls['usefullifeoftheAsset'].touched" class="alert-danger"> 
+                        Usefull life of the Asset should be years</span>
+                </div>
+        <div class="text-center">
+            <button [disabled]='propertyForm.invalid' mat-raised-button color="primary" type="submit">Submit</button>
+        </div>
+    </form>
+</mat-card>
+</div>
+</div>
+</div>
+</div>
+
+    <!--<div *ngIf='errorMessage' class="error"> 
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='message' class="success">
+        {{message}}
+    </div>-->

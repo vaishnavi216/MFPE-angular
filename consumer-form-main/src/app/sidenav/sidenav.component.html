@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- <link rel="stylesheet" href="../style.css"> -->
+
+  <title>DashBoard</title>
+  
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+    
+  
+		
+</head>
+<body>
+    <!-- ======= Mobile nav toggle button ======= -->
+ 
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-between">
+      <div class="d-flex flex-column">
+  
+          <nav class="nav-menu">
+              <ul>
+                <li><a routerLink="/dashboard"> <span>Home</span></a></li>
+                <li><a routerLink="/consumer-details/create"> <span>Create Consumer Business</span></a></li>
+                <li><a routerLink="/consumer-details/update/:id"> <span>Update Consumer Business</span></a></li>
+                <li><a routerLink="/consumer-details/view/:id"> <span>View Consumer Business</span></a></li>
+                <li><a routerLink="/createbusiness"> <span>Create Business Property</span></a></li>
+                <li><a routerLink="/updatebusiness"> <span>Update Business Property</span></a></li>
+                <li><a routerLink="/viewbusiness"> <span>View Business Property</span></a></li>
+                <li><a routerLink="/viewquotes"><span>View Quotes</span></a></li>
+                <li><a routerLink="/createpolicy"><span>Create Policy</span></a></li>
+                <li><a routerLink="/issuepolicy"><span>Issue Policy</span></a></li>
+                <li><a routerLink="/viewpolicy"><span>View Policy</span></a></li>
+                <li><a (click)="logout()" >Logout</a></li>
+              </ul>
+            </nav><!-- .nav-menu -->
+          </div>
+      </header>
+</body>
+</html>

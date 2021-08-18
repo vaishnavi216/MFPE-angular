@@ -1,0 +1,35 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<app-sidenav></app-sidenav>
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+               
+                <mat-card> 
+                <form [formGroup]="createPolicyForm" (ngSubmit)="cPolicy(createPolicyForm.value)">  
+                        <h1 class="text-center"> Create Policy</h1>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Consumer_ID</mat-label>
+                        <input type="text" name="consumerid" formControlName="consumerid" required placeholder="Enter ConsumerId" matInput/>
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>AcceptedQuotes</mat-label>
+                        <input type="type" name='acceptedquotes' formControlName='acceptedquotes' required placeholder="Enter AcceptedQuotes" matInput/>
+                    </mat-form-field>
+             <div class="container text-center">
+            <button [disabled]='createPolicyForm.invalid' style="margin-right: 10px" mat-raised-button color="primary" type="submit">Create Policy</button>
+        </div>
+    </form>
+</mat-card>
+</div>
+</div>
+</div>
+</div>
+<span></span>
+<!-- <div *ngIf='message' class="success">
+   <h1>{{message}}</h1>
+</div> -->
+
+<!-- <div *ngIf='errorMessage' class="error">
+        {{errorMessage}}
+    </div> -->

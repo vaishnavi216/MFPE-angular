@@ -1,0 +1,24 @@
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
+import { IPropertyFormData } from "../models/BusinessData";
+
+@Injectable({
+    providedIn: 'root',
+})
+export class ViewPropertyService {
+    private baseURL = environment.consumerBaseURL;
+
+    constructor(private httpClient: HttpClient) {}
+    viewPropertyDetails(cid: number,pid: number): Observable<any>{
+        const createURL = `${this.baseURL}/viewConsumerProperty/${cid}/${pid}`;
+        const header = {
+            authorization: `Bearer ${localStorage.getItem('token')}`,
+            'Access-Control-Allow-Origin': '*'
+        }
+        return this.httpClient.get<IPropertyFormData>(createURL, {
+            headers: header
+        });
+    }
+}

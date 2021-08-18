@@ -1,0 +1,19 @@
+<div class="container">
+    
+    <div>
+        <form [formGroup]="consumerViewForm"> 
+            <div>
+                <label for="consumerId">Consumer Id</label>
+                <input type="text" required [(ngModel)]="consumerid" name="consumerid" formControlName="consumerId">
+            </div>
+            <div>
+                <button [disabled]='consumerViewForm.invalid' (click)='getDetails(consumerid)'>Get Details</button>
+                <button [disabled]='consumerViewForm.invalid' (click)='updateDetails(consumerid)'>Update Details</button>
+                <a routerLink="create">create</a>
+            </div>
+        </form>
+    </div>
+    <!-- <div *ngIf='errorMessage' class="error">
+        {{errorMessage}}
+    </div> -->
+</div>

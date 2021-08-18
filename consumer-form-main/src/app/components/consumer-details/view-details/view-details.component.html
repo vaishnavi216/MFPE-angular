@@ -1,0 +1,105 @@
+<app-sidenav></app-sidenav>
+ <div>
+    <div class="bootstrap-wrapper">
+        <div class="container mt">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                    <h1 class="text-center">View Consumer Details</h1>
+     <mat-card>
+        <div class="text-center">
+    <form [formGroup]="consumerViewForm" (ngSubmit)="getDetails(consumerViewForm.value)"> 
+        <mat-form-field class="full-width" appearance="outline">  
+            <mat-label>Consumer_ID</mat-label>
+        <input type="number" required name="id" formControlName="id" matInput/>
+    </mat-form-field> 
+   
+        <div class="text-center">
+            <button [disabled]='consumerViewForm.invalid' mat-raised-button color="primary" type='submit'>Get Details</button>
+        </div>
+    </form>
+    </div>
+    </mat-card>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    
+    <!--<div *ngIf='errorMessage' class="error">
+        {{errorMessage}}
+    </div>-->
+
+    <div *ngIf='message' class="success">
+        <h3>Consumer details</h3>
+        <div class="row" class="col-9">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Consumer Id </th>
+                        <th>First Name </th>
+                        <th>Last name</th>
+                        <th>Date of Birth </th>
+                        <th>Pan Details</th>
+                        <th>email</th>
+                        <th>Phone Number</th>
+                        <th>Website</th>
+                        <th>Agent Id</th>
+                        <th>Agent Name </th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    <tr>
+                        <td>{{consumerformdata.consumerId}}</td>
+                        <td>{{consumerformdata.firstname}}</td>
+                        <td>{{consumerformdata.lastname}}</td>
+                        <td>{{consumerformdata.dob}}</td>
+                        <td>{{consumerformdata.pandetails}}</td>
+                        <td>{{consumerformdata.email}}</td>
+                        <td>{{consumerformdata.phone}}</td>
+                        <td>{{consumerformdata.website}}</td>
+                        <td>{{consumerformdata.agentid}}</td>
+                        <td>{{consumerformdata.agentname}}</td>
+                    </tr>
+                </tbody>
+            </table> 
+            </div> 
+            
+            <div class="row" class="col-9">
+            <table class="table table-striped">
+            
+                <thead>
+                    <tr>
+                        <th>Business Id</th>
+                        <th>business Name</th>
+                        <th>Business Over View</th>
+                        <th>Validity </th>
+                        <th>Business Category </th>
+                        <th>Business Type</th>
+                        <th>Business TurnOver</th>
+                        <th>Capital Invested</th>
+                        <th>Total Employees</th>
+                        <th>Business Value</th>
+                        <th>Business Age </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{consumerformdata.businessid}}</td>
+                        <td>{{consumerformdata.businessname}}</td>
+                        <td>{{consumerformdata.businessoverview}}</td>
+                        <td>{{consumerformdata.validity}}</td>
+                        <td>{{consumerformdata.businesscategory}}</td>
+                        <td>{{consumerformdata.businesstype}}</td>
+                        <td>{{consumerformdata.businessturnover}}</td>
+                        <td>{{consumerformdata.capitalinvested}}</td>
+                        <td>{{consumerformdata.totalemployees}}</td>
+                        <td>{{consumerformdata.businessvalue}}</td>
+                        <td>{{consumerformdata.businessage}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+    </div>
+
+
+    

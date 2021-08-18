@@ -1,0 +1,202 @@
+<app-sidenav></app-sidenav>
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <h1 class="text-center">Update Details</h1>
+<div class="form-container">
+    <mat-card> 
+    <form [formGroup]="consumerForm" (ngSubmit)="doAction(consumerForm.value)">
+        <!-- 1 -->
+        <div class="form-group">
+            <input type="text" name="consumerId" class="form-control" formControlName="consumerId" required placeholder="Enter consumer Id">
+            <span *ngIf="consumerForm.controls['consumerId'].invalid && consumerForm.controls['consumerId'].touched" class="alert-danger">
+                consumerId must contains 4 digits. Eg:1001
+            </span>
+        </div>
+        <!-- 2 -->
+        <div class="form-group">
+            <input type="text" name="businessid" class="form-control" formControlName="businessid" required placeholder="Enter businessid">
+            <span *ngIf="consumerForm.controls['businessid'].invalid && consumerForm.controls['businessid'].touched" class="alert-danger">
+                Business id must contains 3 digits. Eg:501
+            </span>
+        </div>
+<!-- 3 -->
+        <div class="form-group">
+            <input type="text" class="form-control" name="firstname" formControlName="firstname" required placeholder="Enter firstname">
+        <span *ngIf="consumerForm.controls['firstname'].invalid && consumerForm.controls['firstname'].touched" class="alert-danger">
+            FristName must contains only alphabets.Eg:Ramesh
+        </span>
+    </div>
+<!-- 4 -->
+        <div class="form-group">
+            <input type="text" class="form-control" name="lastname" formControlName="lastname" required placeholder="Enter lastname">
+        
+        <span *ngIf="consumerForm.controls['lastname'].invalid && consumerForm.controls['lastname'].touched" class="alert-danger">
+            LastName must contains only alphabets. Eg:Kumar
+        </span></div>
+    <!-- 5 -->
+        <div class="form-group">
+            
+            <input type="text"  class="form-control" name="businessname" formControlName="businessname" required placeholder="Enter businessname">
+        
+        <span *ngIf="consumerForm.controls['businessname'].invalid && consumerForm.controls['businessname'].touched" class="alert-danger">
+            BusinessName contains min 4 and max 30 letters
+        </span>
+    </div>
+    <!-- 6 -->
+        <div class="form-group">
+            
+            <input type="date" class="form-control" name="dob" formControlName="dob" required placeholder="Enter date of birth">
+        
+        <span *ngIf="consumerForm.controls['dob'].invalid && consumerForm.controls['dob'].touched" class="alert-danger">
+            Date of birth is required.
+        </span>
+    </div>
+    <!-- 7 -->
+        <div class="form-group">
+           
+            <input type="text" class="form-control"  name='pandetails' formControlName='pandetails' required placeholder="Enter PAN number">
+        
+        <span *ngIf="consumerForm.controls['pandetails'].invalid && consumerForm.controls['pandetails'].touched" class="alert-danger">
+            enter your valid pan number
+        </span>
+    </div>
+    <!-- 8 -->
+        <div class="form-group">
+            
+            <input type="email" class="form-control" name='email' formControlName='email' required placeholder="Enter Email">
+        
+        <span *ngIf="consumerForm.controls['email'].invalid && consumerForm.controls['email'].touched" class="alert-danger">
+            enter above your valid Email address. Eg:abc@gamil.com 
+        </span>
+    </div>
+        <!-- 9 -->
+
+        <div class="form-group">
+            <input type="string" class="form-control" name='phone' formControlName='phone' required placeholder="Enter Phone number">
+        
+        <span *ngIf="consumerForm.controls['phone'].invalid && consumerForm.controls['phone'].touched" class="alert-danger">
+            enter your valid phone Number.
+        </span>
+    </div>
+    <!-- 10 -->
+        <div class="form-group">
+            <input type="text" class="form-control"  name='website' placeholder="Enter your Website" formControlName='website' required >
+        
+        <span *ngIf="consumerForm.controls['website'].invalid && consumerForm.controls['website'].touched" class="alert-danger">
+            enter  valid website name. Eg:www.abc.com
+        </span>
+    </div>
+    <!-- 11 -->
+        <div class="form-group">
+            <input type="text" class="form-control" name='businessoverview' placeholder="Enter Business Overview" formControlName='businessoverview' required >
+        
+        <span *ngIf="consumerForm.controls['businessoverview'].invalid && consumerForm.controls['businessoverview'].touched" class="alert-danger">
+            Business Overview should not exceed 50 letters
+        </span>
+    </div>
+    <!-- 12 -->
+        <div class="form-group">
+            <input type="text" class="form-control" name='validity' placeholder="Enter Validity" formControlName='validity' required >
+        
+        <span *ngIf="consumerForm.controls['validity'].invalid && consumerForm.controls['validity'].touched" class="alert-danger">
+            Validity Must be Numbers, min 1 and max 2 digits
+        </span>
+    </div>
+        <!-- 13 -->
+        <div class="form-group">
+            <input type="text" class="form-control"  name='agentname' placeholder="Enter AgentName" formControlName='agentname' required >
+    
+        <span *ngIf="consumerForm.controls['agentname'].invalid && consumerForm.controls['agentname'].touched" class="alert-danger">
+            AgentName must contains only alphabets. Eg:Kumar
+        </span>
+    </div>
+        <!-- 14 -->
+        <div class="form-group">
+            <input type="number" name='agentid' class="form-control" required placeholder="Enter Agent Id" formControlName='agentid' required >
+    
+        <span *ngIf="consumerForm.controls['agentid'].invalid && consumerForm.controls['agentid'].touched" class="alert-danger">
+            Agent Id must be 0 to 9
+        </span>
+    </div>
+        <!-- 15 -->
+        <div class="form-group">
+            <select name="businesscategory" class="form-control" placeholder="business category" required id="businesscategory" formControlName='businesscategory' [(ngModel)]='bsCategory' (change)="changeType(bsCategory)">
+                <option value="" disabled>Select Business Category</option>
+                <option [ngValue]='null' disabled></option>
+                <option *ngFor="let category of categories" [ngValue]='category'>{{category}}</option>
+            </select>
+        <span *ngIf="consumerForm.controls['businesscategory'].invalid && consumerForm.controls['businesscategory'].touched" class="alert-danger">
+            business category required
+        </span>
+    </div>
+        <!-- 16 -->
+        <div class="form-group">
+            <select name="businesstype" class="form-control" placeholder="business TYPE" id="businesstype" formControlName='businesstype'>
+                <option [ngValue]='null' disabled>Select BusinessType</option>
+                <option *ngFor="let type of actualTypes" [ngValue]='type'>{{type}}</option>
+            </select>
+        <span *ngIf="consumerForm.controls['businesstype'].invalid && consumerForm.controls['businesstype'].touched" class="alert-danger">
+           business type required.
+        </span>
+    </div>
+        <!-- 17 -->
+        <div class="form-group">
+        <select name="location" id="location" class="form-control" formControlName="location">
+            <option  value="" disabled>Select your Location</option>
+            <option selected value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Delhi">Delhi</option>
+        </select>
+
+        <span *ngIf="consumerForm.controls['location'].invalid && consumerForm.controls['location'].touched" class="alert-danger">
+            select your location.
+        </span>
+    </div>
+        <!-- 18 -->
+        <div class="form-group">
+            <input type="number" class="form-control" name='businessturnover' placeholder="Enter BusinessTurnOver In Lakhs" formControlName='businessturnover' required >
+        <span *ngIf="consumerForm.controls['businessturnover'].invalid && consumerForm.controls['businessturnover'].touched" class="alert-danger">
+           business turnover in lakhs
+        </span>
+    </div>
+        <!-- 19 -->
+        <div class="form-group">
+            <input type="number" class="form-control" name='capitalinvested' placeholder="Enter CapitalInvested In Lakhs" formControlName='capitalinvested' required >
+        <span *ngIf="consumerForm.controls['capitalinvested'].invalid && consumerForm.controls['capitalinvested'].touched" class="alert-danger">
+            capital invested in lakhs
+        </span>
+    </div>
+        <!-- 20 -->
+        <div class="form-group">
+            <input type="number" class="form-control"  name='totalemployees' placeholder="Enter total Employees" formControlName='totalemployees' required >
+        <span *ngIf="consumerForm.controls['totalemployees'].invalid && consumerForm.controls['totalemployees'].touched" class="alert-danger">
+            total employee required.
+        </span>
+    </div>
+        <!-- 21 -->
+        <div class="form-group">
+            <input type="number"  class="form-control" name='businessage' placeholder="Enter business age"formControlName='businessage' required >
+        <span *ngIf="consumerForm.controls['businessage'].invalid && consumerForm.controls['businessage'].touched" class="alert-danger">
+            business age must be years
+        </span>
+    </div>
+        <div class="text-center">
+            <button [disabled]='consumerForm.invalid' mat-raised-button color="primary" type="submit">Submit</button>
+        </div>
+    </form>
+</mat-card>
+</div>
+</div>
+</div>
+</div>
+    <!--<div *ngIf='errorMessage' class="error">
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='message' class="success">
+        {{message}}
+    </div>-->
+</div>
